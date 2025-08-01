@@ -218,3 +218,103 @@ body, html {
     transform: translateY(0);
   }
 }
+
+/* Material Icons import */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* Global styles for body and container are already present in styles.css */
+/* I will focus on making the landingpage component responsive */
+
+/* Responsive adjustments for main-container */
+@media (max-width: 768px) {
+  .main-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .input-wrapper input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .input-wrapper button {
+    padding: 8px;
+  }
+
+  .input-wrapper button i {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-wrapper input {
+    max-width: 100%;
+  }
+
+  .examples {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .example-card {
+    width: 100%;
+  }
+
+  .chat-bubble {
+    max-width: 85%; /* Allow chat bubbles to take more width on small screens */
+  }
+}
+
+/* Adjustments for chat history and input on smaller screens */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    height: 90vh; /* Make container taller on smaller screens */
+  }
+
+  .landing-view h1 {
+    font-size: 2.5rem;
+  }
+
+  .chat-message {
+    margin-bottom: 15px;
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .chat-bubble {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+}
