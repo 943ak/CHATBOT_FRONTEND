@@ -11,7 +11,7 @@ export interface Message {
   providedIn: 'root'
 })
 export class ChatService {
-  private apiUrl = 'https://your-backend-url.onrender.com/chat'; // Replace with your actual Render URL
+  private apiUrl = 'https://chatbot-backend-bl6g.onrender.com/chat'; // Replace with your actual Render URL
 
   constructor(private http: HttpClient) { }
 
