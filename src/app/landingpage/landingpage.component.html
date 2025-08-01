@@ -1,0 +1,50 @@
+<div class="container">
+  <!-- Initial Landing Page View -->
+  <div *ngIf="messages.length === 0" class="landing-view">
+    <h1>Nova Chat</h1>
+    <p class="subtitle">Your AI-powered assistant</p>
+  </div>
+
+  <!-- Chat History -->
+  <div class="chat-history" #chatHistory>
+    <div *ngFor="let message of messages" #chatMessage class="chat-message" [ngClass]="{'user-message': message.role === 'user', 'bot-message': message.role === 'assistant'}">
+      <i class="material-icons avatar">{{ message.role === 'user' ? 'person' : 'smart_toy' }}</i>
+      <p class="chat-bubble">{{ message.content }}</p>
+    </div>
+  </div>
+
+  <!-- Always visible input form -->
+  <form (ngSubmit)="handleSubmit()" #inputForm="ngForm" class="input-form">
+    <div class="input-wrapper">
+      <input
+        type="text"
+        name="userMessage"
+        [(ngModel)]="userInput"
+        placeholder="Type your request here..."
+        required
+        (keydown.enter)="handleSubmit()"
+      />
+      <button type="submit"><i class="material-icons">send</i></button>
+    </div>
+  </form>
+
+  <!-- Example prompts for initial view -->
+  <div *ngIf="messages.length === 0" class="examples">
+    <div class="example-card" (click)="setExample('Explain quantum computing in simple terms')">
+      <i class="material-icons">lightbulb_outline</i>
+      <h3>Explain quantum computing</h3>
+      <p>in simple terms</p>
+    </div>
+    <div class="example-card" (click)="setExample('Got any creative ideas for a 10 year old’s birthday?')">
+      <i class="material-icons">celebration</i>
+      <h3>Creative ideas</h3>
+      <p>for a 10 year old’s birthday</p>
+    </div>
+    <div class="example-card" (click)="setExample('How do I make an HTTP request in Javascript?')">
+      <i class="material-icons">code</i>
+      <h3>HTTP request in Javascript</h3>
+      <p>How to make one</p>
+    </div>
+  </div>
+</div>
+
