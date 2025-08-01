@@ -1,4 +1,4 @@
-/* Reset */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 * {
   margin: 0;
   padding: 0;
@@ -220,7 +220,7 @@ body, html {
 }
 
 /* Material Icons import */
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 
 /* Global styles for body and container are already present in styles.css */
 /* I will focus on making the landingpage component responsive */
